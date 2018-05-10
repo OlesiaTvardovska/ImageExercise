@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ImagesExercise"
+             x:Class="ImagesExercise.MainPage">
+    <AbsoluteLayout BackgroundColor="Black">
+        <Image Source="http://lorempixel.com/1920/1080/city/1" Aspect="AspectFit" x:Name="image" AbsoluteLayout.LayoutBounds="0,0.5,1,1" AbsoluteLayout.LayoutFlags="All"/>
+        <Button Image="left.png" Clicked="LeftClicked"
+                    AbsoluteLayout.LayoutBounds="0.05,0.05,100,100"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button Image="right.png" Clicked="RightClicked"
+                    AbsoluteLayout.LayoutBounds="0.95,0.05,100,100"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}"
+                           AbsoluteLayout.LayoutBounds="0.5,0.05,100,100"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" 
+                           Color="AntiqueWhite"/>
+    </AbsoluteLayout>
+
+</ContentPage>
